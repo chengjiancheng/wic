@@ -1,0 +1,25 @@
+<h2>The latest ticket in processing is {{latestid}}</h2>
+<h2>My Ticket List</h2>
+<button (click)="addHero()">Add New Incident</button>
+<div *ngIf="addingHero">
+  <my-hero-detail (close)="close($event)"></my-hero-detail>
+</div>
+<div class="error" *ngIf="error">{{error}}</div>
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+<ul class="heroes">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+    <span class="hero-element">
+      <span class="badge">{{hero.id}}</span><span class="badge">{{hero.status}}</span> {{hero.employee}} - {{hero.name}}
+    </span>
+    <button class="delete-button" (click)="deleteHero(hero, $event)">Cancel</button>
+  </li>
+</ul>
+
+
+
+

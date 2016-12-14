@@ -1,0 +1,27 @@
+<div *ngIf="hero">
+  <h2>{{hero.name}} details!</h2>
+  <div>
+    <label>id: </label>{{hero.id}}</div>
+  <div>
+    <label>employee: </label>
+    <input [(ngModel)]="hero.employee" placeholder="employee" />
+  </div>
+  <div>
+    <label>email: </label>
+    <input [(ngModel)]="hero.email" placeholder="email" />
+  </div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name" />
+  </div>
+  <div>
+    <label>reply: </label>
+    <input [(ngModel)]="hero.reply" placeholder="reply" readonly="readonly" />
+  </div>
+  <div>
+    <label>status: </label>
+    <input [(ngModel)]="hero.status" placeholder="status" readonly="readonly" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
