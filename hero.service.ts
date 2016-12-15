@@ -3,13 +3,23 @@ import { Headers, Http, Response } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Hero } from './hero';
+import { Hero,Engineer } from './hero';
+import { ENGINEERS } from './mock-data';
 
 @Injectable()
 export class HeroService {
   private heroesUrl = 'app/heroes';  // URL to web api
 
   constructor(private http: Http) { }
+
+  getEngineers(): Promise<Engineer[]> {
+    // return this.http
+    //   .get(this.heroesUrl)
+    //   .toPromise()
+    //   .then(response => response.json().data as Hero[])
+    //   .catch(this.handleError);
+    return Promise.resolve(ENGINEERS);
+  }
 
   getHeroes(): Promise<Hero[]> {
     return this.http

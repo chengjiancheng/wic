@@ -7,3 +7,12 @@ export class Hero {
   status:string;
   statuscode:number;
 }
+
+export class Engineer {
+  id: number;
+  name: string;
+  email:string;
+  city: string;
+  building: string;
+  status: string;
+}

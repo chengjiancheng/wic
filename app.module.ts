@@ -12,6 +12,7 @@ import { AppRoutingModule, routedComponents } from './app-routing.module';
 import { Login } from './login';
 import { HeroService } from './hero.service';
 import { HeroSearchComponent } from './hero-search.component';
+import { EngineerListComponent } from './engineer-list.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,7 @@ import { HeroSearchComponent } from './hero-search.component';
   ],
   declarations: [
     AppComponent,
-    HeroSearchComponent,
+    HeroSearchComponent,EngineerListComponent,
     routedComponents
   ],
   providers: [
