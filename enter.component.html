@@ -1,0 +1,23 @@
+<div class="enter jumbotron center-block">
+  <h1>Engineer Enter</h1>
+  <form role="form" (submit)="enter($event, city.value, building.value, engineer.value, password.value)">
+  <div class="form-group">
+    <label for="city">City </label>
+    <input type="text" #city class="form-control" id="city" placeholder="City">
+  </div>
+  <div class="form-group">
+    <label for="building">Building </label>
+    <input type="text" #building class="form-control" id="building" placeholder="Building">
+  </div>
+  <div class="form-group">
+    <label for="engineer">Engineer </label>
+    <input type="text" #engineer class="form-control" id="engineer" placeholder="Engineer">
+  </div>
+  <div class="form-group">
+    <label for="password">Password </label>
+    <input type="password" #password class="form-control" id="password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+    <a [routerLink]="['/signup']">Click here to Signup</a>
+</form>
+</div>
