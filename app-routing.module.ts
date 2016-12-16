@@ -6,6 +6,7 @@ import { HeroesComponent } from './heroes.component';
 import { QueueComponent } from './queue.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { Login } from './login';
+import { EnterComponent } from './enter.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
       path: 'login',
       component: Login
+  },
+  {
+      path: 'enter',
+      component: EnterComponent
   },
   {
     path: 'dashboard',
@@ -41,4 +46,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [Login,DashboardComponent, QueueComponent,HeroesComponent, HeroDetailComponent];
+export const routedComponents = [Login,EnterComponent,DashboardComponent, QueueComponent,HeroesComponent, HeroDetailComponent];
