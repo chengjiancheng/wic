@@ -1,6 +1,6 @@
 <div class="enter jumbotron center-block">
   <h1>Engineer Enter</h1>
-  <form role="form" (submit)="enter($event, city.value, building.value, engineer.value, password.value)">
+  <form role="form" (submit)="enter($event, city.value, building.value, name.value, password.value)">
   <div class="form-group">
     <label for="city">City </label>
     <input type="text" #city class="form-control" id="city" placeholder="City">
@@ -10,8 +10,8 @@
     <input type="text" #building class="form-control" id="building" placeholder="Building">
   </div>
   <div class="form-group">
-    <label for="engineer">Engineer </label>
-    <input type="text" #engineer class="form-control" id="engineer" placeholder="Engineer">
+    <label for="name">Name </label>
+    <input type="text" #name class="form-control" id="name" placeholder="Name">
   </div>
   <div class="form-group">
     <label for="password">Password </label>
