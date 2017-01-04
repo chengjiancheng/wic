@@ -5,6 +5,10 @@ import { Hero,Engineer } from './hero';
 // {  id: 3,  name: '工程师丙',email:'a@a.com',city:'Beijing',building:'Road A3',status:'working'},  
 // {  id: 4,  name: '工程师丁',email:'a@a.com',city:'Beijing',building:'Road A3',status:'working'}
 // ];
+export const LANGUAGETYPE: any[] = [
+{id:1,name:'中文'},
+{id:2,name:'English'}
+];
 export const STATUSTYPE: any[] = [
 {statuscode:0,status:'new'},
 {statuscode:1,status:'assigned'},

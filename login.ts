@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { HeroService } from './hero.service';
@@ -10,10 +10,18 @@ import { LOGINPAGE } from './page-login';
   templateUrl: 'app/login.html',
   styleUrls: [ 'app/login.css' ]
 })
-export class Login {
-  page=LOGINPAGE.find(page=>page.language == 'en')
+export class Login implements OnInit{
+  page=LOGINPAGE.find(page=>page.id == 1);
 
   constructor(public router: Router, public http: Http) {
+  }
+
+
+  ngOnInit(): void {
+    if(localStorage.getItem('wic_language') ){
+      let languageid=localStorage.getItem('wic_language');
+      this.page=LOGINPAGE.find(page=>page.id == languageid);
+    }
   }
 
   login(event: any, employee:string, email:string) {

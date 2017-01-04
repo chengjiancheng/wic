@@ -1,0 +1,53 @@
+<div *ngIf="hero">
+  <h2>{{hero.name}} details!</h2>
+  <div>
+    <label>id: </label>{{hero.id}}</div>
+  <div>
+    <label>employee: </label>
+    <input [(ngModel)]="hero.employee" placeholder="employee" readonly="readonly"/>
+  </div>
+  <div>
+    <label>email: </label>
+    <input [(ngModel)]="hero.email" placeholder="email" readonly="readonly"/>
+  </div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name" readonly="readonly"/>
+  </div>
+  <div>
+    <label>assignee: </label>
+      <select class="form-control" name="sel" 
+        [(ngModel)]="selectedAssignee" 
+        (ngModelChange)="updateAssignee($event)">
+        <option disabled value="0" class="hideoption">{{hero.assigneeid}} - {{hero.assignee}}</option>
+        <option *ngFor="let engineer of engineers" [ngValue]="engineer">
+        {{engineer.id}} - {{engineer.name}}
+      </option>
+      </select>
+  </div>
+   <div>
+    <label>assigneeid: </label>
+    <input [(ngModel)]="hero.assigneeid" placeholder="assigneeid" readonly="readonly" />
+  </div>
+  <div>
+    <label>assignee: </label>
+    <input [(ngModel)]="hero.assignee" placeholder="assignee" readonly="readonly" />
+  </div>
+  <div>
+    <label>reply: </label>
+    <input [(ngModel)]="hero.reply" placeholder="reply" />
+  </div>
+  <div>
+    <label>status: </label>
+    <select class="form-control" name="sel" 
+        [(ngModel)]="selectedStatus" 
+        (ngModelChange)="updateStatus($event)">
+        <option disabled value="0" class="hideoption">{{hero.status}}</option>
+        <option *ngFor="let status of statustype" [ngValue]="status">
+        {{status.status}} - {{status.statuscode}}
+      </option>
+      </select>
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>
