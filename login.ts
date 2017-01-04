@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { HeroService } from './hero.service';
+import { LOGINPAGE } from './page-login';
 // import { contentHeaders } from '../common/headers';
 
 @Component({
@@ -10,6 +11,8 @@ import { HeroService } from './hero.service';
   styleUrls: [ 'app/login.css' ]
 })
 export class Login {
+  page=LOGINPAGE.find(page=>page.language == 'en')
+
   constructor(public router: Router, public http: Http) {
   }
 

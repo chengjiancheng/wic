@@ -28,3 +28,10 @@ button:disabled {
   color: #ccc;
   cursor: auto;
 }
+body {
+    line-height: initial;
+}
+.form-control{
+  display: initial;
+    width: initial;
+}

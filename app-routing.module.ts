@@ -7,6 +7,7 @@ import { QueueComponent } from './queue.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { Login } from './login';
 import { EnterComponent } from './enter.component';
+import { IncidentComponent } from './incident.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
     component: HeroDetailComponent
   },
   {
+    path: 'incident/:id',
+    component: IncidentComponent
+  },
+  {
     path: 'myticket',
     component: HeroesComponent
   },
@@ -46,4 +51,4 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 
-export const routedComponents = [Login,EnterComponent,DashboardComponent, QueueComponent,HeroesComponent, HeroDetailComponent];
+export const routedComponents = [IncidentComponent,Login,EnterComponent,DashboardComponent, QueueComponent,HeroesComponent, HeroDetailComponent];

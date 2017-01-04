@@ -12,6 +12,7 @@ import { HeroService } from './hero.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
+  workingheroes: Hero[] = [];
 
   constructor(
     private router: Router,
@@ -20,11 +21,15 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(0, 6));
+      // .then(heroes => this.heroes = heroes.slice(0, 6));
+      .then(heroes => 
+        {this.heroes = heroes.filter(hero => hero.statuscode ==0 ).slice(0, 6);
+          this.workingheroes = heroes.filter(hero => hero.statuscode > 0 && hero.statuscode < 4);}
+        );
   }
 
   gotoDetail(hero: Hero): void {
-    let link = ['/detail', hero.id];
+    let link = ['/incident', hero.id];
     this.router.navigate(link);
   }
 }

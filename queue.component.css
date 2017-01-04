@@ -8,6 +8,7 @@
   list-style-type: none;
   padding: 0;
   width: 100%;
+  line-height: initial;
 }
 .heroes li {
   cursor: pointer;

@@ -1,14 +1,48 @@
 <div *ngIf="hero">
   <h2>{{hero.name}} details!</h2>
   <div>
-    <label>id: </label>{{hero.id}}</div>
+    <label>id: </label>{{hero.id}}
+  </div>
+  <div>
+    <label>category: </label>
+      <select class="form-control" name="sel" 
+        [(ngModel)]="selectedCategory" 
+        (ngModelChange)="updateCategory($event)">
+        <option disabled value="0" class="hideoption">{{hero.category}}</option>
+        <option *ngFor="let category of categories" [ngValue]="category">
+        {{category.id}} - {{category.name}}
+      </option>
+      </select>
+  </div>
+  <div>
+    <label>area: </label>
+      <select class="form-control" name="sel" 
+        [(ngModel)]="selectedArea" 
+        (ngModelChange)="updateArea($event)">
+        <option disabled value="0" class="hideoption">{{hero.area}}</option>
+        <option *ngFor="let area of areas" [ngValue]="area">
+        {{area.id}} - {{area.name}}
+      </option>
+      </select>
+  </div>
+  <div>
+    <label>subarea: </label>
+      <select class="form-control" name="sel" 
+        [(ngModel)]="selectedSubArea" 
+        (ngModelChange)="updateSubArea($event)">
+        <option disabled value="0" class="hideoption">{{hero.subarea}}</option>
+        <option *ngFor="let subarea of subareas" [ngValue]="subarea">
+        {{subarea.id}} - {{subarea.name}}
+      </option>
+      </select>
+  </div>
   <div>
     <label>employee: </label>
-    <input [(ngModel)]="hero.employee" placeholder="employee" />
+    <input [(ngModel)]="hero.employee" placeholder="employee" readonly="readonly"/>
   </div>
   <div>
     <label>email: </label>
-    <input [(ngModel)]="hero.email" placeholder="email" />
+    <input [(ngModel)]="hero.email" placeholder="email" readonly="readonly"/>
   </div>
   <div>
     <label>name: </label>

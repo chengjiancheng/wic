@@ -3,6 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
+import { CATEGORIES } from './mock-data';
 
 @Component({
   moduleId: module.id,
@@ -15,6 +16,12 @@ export class HeroDetailComponent implements OnInit {
   @Output() close = new EventEmitter();
   error: any;
   navigated = false; // true if navigated here
+  categories=CATEGORIES;
+  areas:any;
+  subareas:any;
+  selectedCategory:any=0;
+  selectedArea:any=0;
+  selectedSubArea:any=0;
 
   constructor(
     private heroService: HeroService,
@@ -47,6 +54,23 @@ export class HeroDetailComponent implements OnInit {
           this.goBack(hero);
         })
         .catch(error => this.error = error); // TODO: Display error message
+  }
+
+  updateCategory(selectedCategory:any):void {
+      this.hero.categoryid=selectedCategory.id;
+      this.hero.category=selectedCategory.name;
+      this.areas=selectedCategory.areas
+  }
+
+  updateArea(selectedArea:any):void {
+      this.hero.categoryid=selectedArea.id;
+      this.hero.area=selectedArea.name;
+      this.subareas=selectedArea.subareas
+  }
+
+  updateSubArea(selectedSubArea:any):void {
+      this.hero.categoryid=selectedSubArea.id;
+      this.hero.subarea=selectedSubArea.name;
   }
 
   goBack(savedHero: Hero = null): void {

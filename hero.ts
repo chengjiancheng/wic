@@ -2,6 +2,10 @@ export class Hero {
   id: number;
   employee:string;
   email:string;
+  categoryid:number;
+  category:string;
+  area:string;
+  subarea:string;
   name: string;
   assigneeid: number;
   assignee:string;

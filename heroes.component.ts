@@ -23,7 +23,7 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService
-      .getHeroes()
+      .getHeroByEmployee(JSON.parse(localStorage.getItem('id_token')).employee)
       .then(heroes => this.heroes = heroes)
       .catch(error => this.error = error);
   }

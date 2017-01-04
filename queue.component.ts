@@ -59,6 +59,6 @@ export class QueueComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedHero.id]);
+    this.router.navigate(['/incident', this.selectedHero.id]);
   }
 }

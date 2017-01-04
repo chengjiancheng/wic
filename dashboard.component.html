@@ -2,9 +2,17 @@
 <div class="grid grid-pad">
   <div *ngFor="let hero of heroes" (click)="gotoDetail(hero)" class="col-1-4">
     <div class="module hero">
-      <h4>{{hero.id}}<br>{{hero.employee}} - {{hero.name}}</h4>
+      <h4>{{hero.id}}<br>{{hero.category}}-{{hero.area}}-{{hero.subarea}}<br>{{hero.employee}} - {{hero.name}}</h4>
     </div>
   </div>
 </div>
 <hero-search></hero-search>
+<h3>Ongoing Issues</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let hero of workingheroes" (click)="gotoDetail(hero)" class="col-1-4">
+    <div class="module hero">
+      <h4>{{hero.id}}<br>{{hero.category}}-{{hero.area}}-{{hero.subarea}}<br>{{hero.employee}} - {{hero.name}}</h4>
+    </div>
+  </div>
+</div>
 <engineer-list></engineer-list>

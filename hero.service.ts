@@ -34,6 +34,11 @@ export class HeroService {
       .then(heroes => heroes.find(hero => hero.id === id));
   }
 
+  getHeroByEmployee(employee: string): Promise<Hero[]> {
+    return this.getHeroes()
+      .then(heroes => heroes.filter(hero => hero.employee === employee));
+  }
+
   save(hero: Hero): Promise<Hero> {
     if (hero.id) {
       return this.put(hero);
